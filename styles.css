@@ -137,6 +137,81 @@
   color: var(--text);
 }
 
+.section{
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+}
+.projects-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));gap: 16px;margin-top: 14px
+}
+.proj{
+  padding:14px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #fff, #fbfdff);
+  box-shadow: 0 6px 18px var(--glass);
+  border: 1px solid rgba(2, 6, 23, 0.03);
+}
+.proj img{
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+}
+.tags{
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.tag{
+  font-size: 12px;
+  padding: 6 px 8px;
+  border-radius: 8px;
+  background: rgba(2, 6, 23, 0.04);
+}
+
+/* ==== Skills (Categorized Lists) ==== */
+.skills-groups {
+  display: grid;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.skills-group h3 {
+  margin: 0 0 6px 0;
+  font-size: 14px;
+}
+
+.skills-group ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.skills-group li {
+  margin-bottom: 4px;
+}
+
+/* ==== Skills (Inline List Style) ==== */
+.skills-inline p {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.skills-inline strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+
+
+
+
 
 
 
