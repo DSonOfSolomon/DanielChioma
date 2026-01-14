@@ -30,7 +30,7 @@
   }
 
   .wrap{
-    width: 100;
+    width: 100%;
     max-width: var(--max);
   }
   header{
@@ -52,7 +52,7 @@
     width: 48px;
     height: 48px;
     border-radius: 12px;
-    background: -o-linear-gradient(135deg, var(--accent), #7dd3fc);
+    background: linear-gradient(135deg, var(--accent), #7dd3fc);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -93,7 +93,7 @@
   padding: 32px;
   border-radius: var(--radius);
   display: flex;
-  gap: 228px;
+  gap: 28px;
   align-items: center;
   margin-bottom: 26px;
   box-shadow: 0 6px 18px var(--glass);
@@ -116,7 +116,7 @@
   gap: 12px;
 }
 
-.btn, .btnprimary, .btn-ghost{
+.btn, .btn-primary, .btn-ghost{
   text-decoration: none;
   display: inline-block;
   padding: 10px 14px;

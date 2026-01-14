@@ -6,16 +6,17 @@
     <title>Daniel Chioma - Portfolio</title>
     <meta name="description" content="Portfolio of Daniel Chioma - Software Developer. Projects, Skills and Contact">
 
-    <link rel="stylesheet" href="css/styles.css">
-</head >
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
     <div class="wrap">
+        <!-- HEADER -->
         <header>
             <div class="brand">
                 <div class="logo">DC</div>
                 <div>
                     <div style="font-weight: 800">Daniel Chioma</div>
-                    <div style="font-size:13px;color: var(--mutedmuted)">Software Engineer • MSc QUB</div>
+                    <div style="font-size:13px;color: var(--muted)">Software Engineer • MSc QUB</div>
 
                     <div class="social-icons">
                         <a href="https://github.com/DSonOfSolomon" target="_blank" rel="noopener" title="Github">
@@ -26,9 +27,7 @@
                         </a>
                         <a href="mailto:dchioma01@qub.ac.uk" title="Email">
                             <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email">
-
                         </a>
-                       
                     </div>
                 </div>
             </div>
@@ -40,17 +39,17 @@
             </nav>
         </header>
 
+        <!-- MAIN CONTENT -->
         <main>
+            <!-- HERO -->
             <section id="home" class="hero" aria-labelledby="intro">
                 <div class="hero-left">
                     <h1 id="intro">Hi, I am Daniel Chioma.</h1>
                     <p>A software developer who builds reliable, efficient applications. I work across the full stack, focusing on clean code, problem-solving, and delivering high-quality solutions.</p>
                     <div class="cta">
-
                         <button class="btn btn-primary" id="open-modal">Contact Me</button>
                         <a class="btn btn-primary" href="#projects">See Projects</a>
-
-                </div>
+                    </div>
                 </div>
                 <div style="width: 320px;max-width: 40%;">
                     <div style="background:linear-gradient(180deg, #fff,#f8fffe);padding:12px;border-radius: 12px;box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);">
@@ -60,18 +59,20 @@
                 </div>
             </section>
 
+            <!-- PROJECTS & SKILLS GRID -->
             <div class="grid" style="margin-top: 18px;">
-                <section id ="projects" class="section" aria-labelledby="projects-title">
+                <!-- PROJECTS -->
+                <section id="projects" class="section" aria-labelledby="projects-title">
                     <h2 id="projects-title">Projects</h2>
                     <p class="small">A selection of work. Replace these with live repos, case studies and links to demos.</p>
                     <div class="projects-grid" role="list">
-                        <!--Project 1-->
+                        <!-- Project 1 -->
                         <article class="proj">
                             <img src="...." alt="Screenshot of app">
                             <h3>My App</h3>
-                            <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem IpsumLorem Ipsum</p>
+                            <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
                             <div class="tags">
-                                <span class="tag" >Java</span>
+                                <span class="tag">Java</span>
                                 <span class="tag">Java</span>
                                 <span class="tag">OOP</span>
                             </div>
@@ -80,77 +81,76 @@
                     </div>
                 </section>
 
+                <!-- SKILLS -->
                 <aside id="skills" class="section" aria-labelledby="skills-title">
                     <h2 id="skills-title">Skills</h2>
-                    <p class="small">Technologies and tools i work with.</p>
+                    <p class="small">Technologies and tools I work with.</p>
 
                     <div class="skills-inline">
                         <p>
-                            <strong>Language</strong><br>
+                            <strong>Languages</strong><br>
                             • Java • Python
                         </p>
 
                         <p>
                             <strong>Backend Frameworks</strong><br>
                             • Spring Boot • Django 
-                          </p>
+                        </p>
 
-                          <p>
+                        <p>
                             <strong>Backend Technologies</strong><br>
                             • RESTful APIs • JPA (Hibernate) • MVC architecture
-                          </p>
-                      
-                          <p>
+                        </p>
+
+                        <p>
                             <strong>Frontend Technologies</strong><br>
                             • HTML • CSS • JavaScript
-                          </p>
+                        </p>
 
-                          <p>
+                        <p>
                             <strong>Frontend Framework</strong><br>
                             • React 
-                          </p>
-                      
-                          <p>
+                        </p>
+
+                        <p>
                             <strong>Tools</strong><br>
                             • Git • GitHub • IntelliJ IDEA • VS Code • Maven
-                          </p>
-                        </div>
-
-                    </div>                              
+                        </p>
+                    </div>
                 </aside>
             </div>
 
-        <section id="resune" class="section" aria-labelledby="resume-title" style="margin-top:18px">
+            <!-- RESUME -->
+            <section id="resume" class="section" aria-labelledby="resume-title" style="margin-top:18px">
+                <h2 id="resume-title">Resume</h2>
+                <p class="small">A copy of my resume.</p>
+                <a class="btn btn-primary" href="assets/DanielChioma_Resume.pdf" target="_blank" rel="noopener">Download/View Resume</a>
+            </section>
 
-            <h2 id="resume-title">Resume</h2>
-            <p class="small">A copy of my resume.</p>
-            <a class="btn btn-primary" href="assets/DanielChioma_Resume.pdf" target="_blank" rel="noopener">Download/View Resume</a>
-        </section> 
-        
-        
-
-
-                <footer>
-                    <div>Made with intention - ©️ <span id="year"></span>Daniel Chioma</div>
-                </footer>
-             </section>
-
-         </main>
+            <!-- FOOTER -->
+            <footer>
+                <div>Made with intention - ©️ <span id="year"></span> Daniel Chioma</div>
+            </footer>
+        </main>
     </div>
 
-    <div>
-        <div class="modal" id="Contact-modal">
-            <span class="modal-close" id="modal-close">&times;</span>
-            <h3>Contact Me</h3>
-            <form id="modal-contact-form" onsubmit="handleSubmit(event)">
-                <label class="small">Your Name<input type="text" name="name" placeholder="Full Name" required></label>
-                <label class="small">Your Email<input type="email" name="email" placeholder="You@email.com" required></label>
-                <label class="small">Message<textarea name="message" placeholder="Write here..." required><textarea></label>
-                <button type="submit" class="btn btn-primary" style="margin-top:8px;">Send</button>
-
-            </form>
-        </div>
+    <!-- MODAL FOR CONTACT -->
+    <div class="modal" id="contact-modal">
+        <span class="modal-close" id="modal-close">&times;</span>
+        <h3>Contact Me</h3>
+        <form id="modal-contact-form" onsubmit="handleSubmit(event)">
+            <label class="small">Your Name
+                <input type="text" name="name" placeholder="Full Name" required>
+            </label>
+            <label class="small">Your Email
+                <input type="email" name="email" placeholder="You@email.com" required>
+            </label>
+            <label class="small">Message
+                <textarea name="message" placeholder="Write here..." required></textarea>
+            </label>
+            <button type="submit" class="btn btn-primary" style="margin-top:8px;">Send</button>
+        </form>
     </div>
-    
+
 </body>
 </html>
