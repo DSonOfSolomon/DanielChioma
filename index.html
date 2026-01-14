@@ -125,10 +125,33 @@
             <h2 id="resume-title">Resume</h2>
             <p class="small">A copy of my resume.</p>
             <a class="btn btn-primary" href="assets/DanielChioma_Resume.pdf" target="_blank" rel="noopener">Download/View Resume</a>
-        </section>    
-        </main>
+        </section> 
+        
+        
+                    
+        
 
 
+                <footer>
+                    <div>Made with intention - ©️ <span id="year"></span>Daniel Chioma</div>
+                </footer>
+             </section>
+
+         </main>
+    </div>
+
+    <div>
+        <div class="modal" id="Contact-modal">
+            <span class="modal-close" id="modal-close">&times;</span>
+            <h3>Contact Me</h3>
+            <form id="modal-contact-form" onsubmit="handleSubmit(event)">
+                <label class="small">Your Name<input type="text" name="name" placeholder="Full Name" required></label>
+                <label class="small">Your Email<input type="email" name="email" placeholder="You@email.com" required></label>
+                <label class="small">Message<textarea name="message" placeholder="Write here..." required><textarea></label>
+                <button type="submit" class="btn btn-primary" style="margin-top:8px;">Send</button>
+
+            </form>
+        </div>
     </div>
     
 </body>
