@@ -301,6 +301,56 @@ footer{
   color: var(--text);
   font-weight: 700;
 }
+.skills-inline p {
+  background: rgba(255,255,255,0.15); /* faint separation for each item */
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  color: white;       /* make text readable on gradient */
+}
+
+.skills-inline p:last-child{
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.skills-card {
+  background: linear-gradient(135deg, var(--accent), #7dd3fc 70%, rgba(222,135,14,0.1) 100%);
+  border-radius: 12px;
+  padding: 20px;
+  color: white; /* text stands out */
+  box-shadow: 0 6px 18px var(--glass);
+  display: block;       /* stretch full width of parent */
+  width: 100%;          /* make it stretch fully */
+  max-width: var(--max); /* keeps it aligned with wrap */
+}
+.skill {
+  margin-bottom: 12px;
+}
+
+.skill .label {
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+.bar {
+  height: 12px;
+  border-radius: 10px;
+  background: rgba(2, 6, 23, 0.06); /* subtle gray background */
+  overflow: hidden;
+}
+
+.bar > i {
+  display: block;
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--accent), #7dd3fc); /* colorful gradient */
+}
+
+
+
 
 
 
