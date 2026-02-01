@@ -155,7 +155,7 @@
 }
 .proj img{
   width: 100%;
-  max-height: 200px;
+  max-height: 300px;
   object-fit: contain;
   border-radius: 8px;
   display: block;
@@ -212,6 +212,7 @@ form{
   flex-direction: column;
   gap: 10px;
 }
+
 
 input, textarea{
   padding: 10px;
@@ -302,11 +303,11 @@ footer{
   font-weight: 700;
 }
 .skills-inline p {
-  background: rgba(255,255,255,0.15); /* faint separation for each item */
+  background: rgba(255,255,255,0.15); 
   padding: 8px 12px;
   border-radius: 8px;
   margin-bottom: 8px;
-  color: white;       /* make text readable on gradient */
+  color: white;       
 }
 
 .skills-inline p:last-child{
@@ -318,11 +319,11 @@ footer{
   background: linear-gradient(135deg, var(--accent), #7dd3fc 70%, rgba(222,135,14,0.1) 100%);
   border-radius: 12px;
   padding: 20px;
-  color: white; /* text stands out */
+  color: white; 
   box-shadow: 0 6px 18px var(--glass);
-  display: block;       /* stretch full width of parent */
-  width: 100%;          /* make it stretch fully */
-  max-width: var(--max); /* keeps it aligned with wrap */
+  display: block;       
+  width: 100%;          
+  max-width: var(--max); 
 }
 .skill {
   margin-bottom: 12px;
@@ -338,7 +339,7 @@ footer{
 .bar {
   height: 12px;
   border-radius: 10px;
-  background: rgba(2, 6, 23, 0.06); /* subtle gray background */
+  background: rgba(2, 6, 23, 0.06); 
   overflow: hidden;
 }
 
@@ -346,7 +347,19 @@ footer{
   display: block;
   height: 100%;
   border-radius: 10px;
-  background: linear-gradient(90deg, var(--accent), #7dd3fc); /* colorful gradient */
+  background: linear-gradient(90deg, var(--accent), #7dd3fc); 
+}
+
+.proj-link a{
+  padding: 4px;
+  background-color: #f7f1e9;
+  border-radius: 17px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  position: relative;
+  top: 12px;
+  margin-right: 19px;
+
 }
 
 

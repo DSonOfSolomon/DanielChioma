@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,10 @@
 
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="wrap">
-        <!-- HEADER -->
+
         <header>
             <div class="brand">
                 <div class="logo">DC</div>
@@ -20,10 +22,13 @@
 
                     <div class="social-icons">
                         <a href="https://github.com/DSonOfSolomon" target="_blank" rel="noopener" title="Github">
-                            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="Github">
+                            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg"
+                                alt="Github">
                         </a>
-                        <a href="https://www.linkedin.com/in/danielchioma/" target="_blank" rel="noopener" title="LinkedIn">
-                            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
+                        <a href="https://www.linkedin.com/in/danielchioma/" target="_blank" rel="noopener"
+                            title="LinkedIn">
+                            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
+                                alt="LinkedIn">
                         </a>
                         <a href="mailto:dchioma01@qub.ac.uk" title="Email">
                             <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email">
@@ -39,50 +44,93 @@
             </nav>
         </header>
 
-        <!-- MAIN CONTENT -->
+
         <main>
-            <!-- HERO -->
+
             <section id="home" class="hero" aria-labelledby="intro">
                 <div class="hero-left">
-                    <h1 id="intro">Hi, I am Daniel Chioma.</h1>
-                    <p>A software engineer interested in backend engineering. I build applications with a focus on clear code and practical problem-solving. I enjoy working with APIs, databases, and the server-side logic behind real-world products.</p>
+                    <h1 id="intro">Hi, I am Daniel Chioma</h1>
+                    <p>A software engineer passionate about backend development and building real-world products.
+                        My recent project is an anonymous crowd-advice platform where my 80K followers on Instagram
+                        & Tikok submit dilemmas and vote on verdicts. I leveraged React for frontend, Spring Boot for
+                        backend,
+                        and PostgreSQL for persistent storage.
+                        Featuring role-based security, vote-processing logic, pagination to ensure smooth user
+                        interactions.
+                        I focus on writing clear, maintainable code and solving practical problems.
+                        I enjoy designing RESTful APIs, working with databases, and implementing server-side logic that
+                        supports scalable and secure applications.</p>
+
                     <div class="cta">
                         <button class="btn btn-primary" id="open-modal">Contact Me</button>
                         <a class="btn btn-primary" href="#projects">See Projects</a>
                     </div>
                 </div>
                 <div style="width: 320px;max-width: 40%;">
-                    <div style="background:linear-gradient(180deg, #fff,#f8fffe);padding:12px;border-radius: 12px;box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);">
-                        <p style="margin: 0; font-weight: 800;">Current Focus</p>
-                        <p style="margin: 6px 0 0 0;color: var(--muted);">Focused on designing and building scalable backend systems, with hands-on experience across APIs, data models, and cloud-based services.</p>
+                    <div
+                        style="background:linear-gradient(180deg, #fff,#f8fffe);padding:12px;border-radius: 12px;box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);">
+                        <p style="margin: 0; font-weight: 800;">Current Project</p>
+                        <p style="margin: 6px 0 0 0;color: var(--muted);">Building a personal social media manager, CreaZy, an app which will schedule posts, collect performance data, and train an AI model to automate content creation and identify what works best.
+                            </p>
                     </div>
                 </div>
             </section>
 
-            <!-- PROJECTS & SKILLS GRID -->
+
             <div class="grid" style="margin-top: 18px;">
-                <!-- PROJECTS -->
+
                 <section id="projects" class="section" aria-labelledby="projects-title">
                     <h2 id="projects-title">Projects</h2>
                     <p class="small"></p>
                     <div class="projects-grid" role="list">
+
                         <!-- Project 1 -->
+
+                        <article class="proj">
+                            <img src="assets/Img/JoinPage.png" alt="Screenshot of JoinPage">
+
+                            <h3>TamNet App</h3>
+                            <p>A Community Platform where users anonymously submit stories(cases) and
+                                have them voted on, to arrive at a final verdict.</p>
+                            <div class="tags">
+                                <span class="tag">Java</span>
+                                <span class="tag">Spring Boot</span>
+                                <span class="tag">React</span>
+                            </div>
+                            <div class="proj-link">
+                                <a href="https://youtu.be/IFegBvVrc6k" target="_blank" rel="noopener">View Demo</a>
+                                    
+                                <a href="assets/Doc/App Architecture.pdf" target="_blank" rel="noopener">Architecture Overview</a>
+                                    
+                            </div>
+                        </article>
+
+
+                        <!-- Project 2 -->
                         <article class="proj">
                             <img src="assets/Img/mainScreen.png" alt="Screenshot of Mood App">
-                            
+
                             <h3>Mood App</h3>
-                            <p>A JavaFX application that lets users select their current mood, view mood history, and analyze trends. Features a dynamic greeting, gradient backgrounds based on time of day, and exportable mood history.</p>
+                            <p>A JavaFX application that lets users select their current mood, view mood history, and
+                                analyze trends. Features a dynamic greeting, gradient backgrounds based on time of day,
+                                and exportable mood history.</p>
                             <div class="tags">
                                 <span class="tag">Java</span>
                                 <span class="tag">JavaFX</span>
-                                <span class="tag">OOP</span>
+
                             </div>
-                            <a href="https://github.com/DSonOfSolomon/MyMoodApp" target="_blank" rel="noopener">View Repo / Demo</a>
+                            <div class="proj-link">
+                                <a href="https://github.com/DSonOfSolomon/MyMoodApp" target="_blank" rel="noopener">View
+                                    Repo</a>
+                            </div>
+
                         </article>
+
                     </div>
+
                 </section>
 
-                <!-- SKILLS -->
+
                 <aside id="skills" class="section" aria-labelledby="skills-title">
                     <h2 id="skills-title">Skills</h2>
                     <p> <strong>Tech Stack:</strong><br>
@@ -90,75 +138,79 @@
 
                     <div class="skills-card">
 
-                    
 
-                    <div class="skills-inline">
-                        <p>
-                            <strong>Languages</strong><br>
-                            • Java • Python
-                        </p>
 
-                        <p>
-                            <strong>Backend Frameworks</strong><br>
-                            • Spring Boot • Django 
-                        </p>
+                        <div class="skills-inline">
+                            <p>
+                                <strong>Languages</strong><br>
+                                • Java • Python
+                            </p>
 
-                        <p>
-                            <strong>Backend Technologies</strong><br>
-                            • RESTful APIs • JPA (Hibernate) • MVC architecture
-                        </p>
+                            <p>
+                                <strong>Backend Frameworks</strong><br>
+                                • Spring Boot • Django
+                            </p>
 
-                        <p>
-                            <strong>Frontend Technologies</strong><br>
-                            • HTML • CSS • JavaScript
-                        </p>
+                            <p>
+                                <strong>Backend Technologies</strong><br>
+                                • REST • JPA, Spring Data, Hibernate, SQL • Infrastructure
+                            </p>
 
-                        <p>
-                            <strong>Frontend Framework</strong><br>
-                            • React 
-                        </p>
+                            <p>
+                                <strong>Frontend Technologies</strong><br>
+                                • HTML • CSS • JavaScript
+                            </p>
 
-                        <p>
-                            <strong>Desktop & UI</strong><br>
-                            • JavaFX 
-                        </p>
+                            <p>
+                                <strong>Frontend Framework</strong><br>
+                                • React
+                            </p>
 
-                        <p>
-                            <strong>Tools</strong><br>
-                            • Git • GitHub • IntelliJ IDEA • VS Code • Maven
-                        </p>
-                    </div>
+                            <p>
+                                <strong>Desktop & UI</strong><br>
+                                • JavaFX
+                            </p>
+
+                            <p>
+                                <strong>Tools</strong><br>
+                                • Git • GitHub • IntelliJ IDEA • VS Code • Maven
+                            </p>
+                        </div>
                 </aside>
             </div>
 
-            <!-- RESUME -->
+
             <section id="resume" class="section" aria-labelledby="resume-title" style="margin-top:18px">
                 <h2 id="resume-title">Resume</h2>
                 <p class="small">A copy of my resume.</p>
-                <a class="btn btn-primary" href="assets/DanielChioma_Resume.pdf" target="_blank" rel="noopener">Download/View Resume</a>
+                <a class="btn btn-primary" href="assets/Doc/DanielChioma_Resume.pdf" target="_blank"
+                    rel="noopener">Download/View Resume</a>
             </section>
 
-            <!-- FOOTER -->
+
             <footer>
                 <div>Made with intention - ©️ <span id="year"></span> Daniel Chioma</div>
             </footer>
         </main>
     </div>
 
-    <!-- MODAL FOR CONTACT -->
+
     <div class="modal" id="contact-modal">
         <div class="modal-content">
-          <span class="modal-close" id="modal-close">&times;</span>
-          <h3>Contact Me</h3>
-          <form id="modal-contact-form" onsubmit="handleSubmit(event)">
-            <label class="small">Your Name<input type="text" name="name" placeholder="Full Name" required></label>
-            <label class="small">Your Email<input type="email" name="email" placeholder="You@email.com" required></label>
-            <label class="small">Message<textarea name="message" placeholder="Write a brief message here..." required></textarea></label>
-            <button type="submit" class="btn btn-primary" style="margin-top:8px;">Send</button>
-          </form>
+            <span class="modal-close" id="modal-close">&times;</span>
+            <h3>Contact Me</h3>
+            <form id="modal-contact-form" onsubmit="handleSubmit(event)">
+                <label class="small">Your Name<input type="text" name="name" placeholder="Full Name" required></label>
+                <label class="small">Your Email<input type="email" name="email" placeholder="You@email.com"
+                        required></label>
+                <label class="small">Message<textarea name="message" placeholder="Write a brief message here..."
+                        required></textarea></label>
+                <button type="submit" class="btn btn-primary" style="margin-top:8px;">Send</button>
+            </form>
         </div>
-      </div>
+    </div>
 
     <script src="scripts.js"></script>
 </body>
+
 </html>
