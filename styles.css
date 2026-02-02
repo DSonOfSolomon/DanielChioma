@@ -351,14 +351,14 @@ footer{
 }
 
 .proj-link a{
-  padding: 4px;
+  padding: 5px;
   background-color: #f7f1e9;
   border-radius: 17px;
   text-decoration: none;
   color: rgb(0, 0, 0);
   position: relative;
   top: 12px;
-  margin-right: 19px;
+  margin-right: 5px;
 
 }
 

@@ -50,12 +50,12 @@
             <section id="home" class="hero" aria-labelledby="intro">
                 <div class="hero-left">
                     <h1 id="intro">Hi, I am Daniel Chioma</h1>
-                    <p>I am a backend-focused software engineer who enjoys building real-world products and scalable systems. 
-                        I recently built an anonymous crowd-advice platform for my own audience of over 80,000 followers across Instagram and TikTok, 
-                        created to handle the high volume of dilemmas they send me and allow the community to vote on verdicts.
-                        I developed the frontend with React and built the backend using Spring Boot with PostgreSQL for data persistence. 
-                        The system features role-based access control, vote-processing logic, and paginated APIs to ensure smooth and reliable user interactions. 
-                        I enjoy designing RESTful APIs, working with databases, and building secure, maintainable server-side logic that solves practical problems.</p>
+                    <p>A backend-focused software engineer who builds scalable, real-world systems. I recently created an anonymous crowd-advice platform for my 80,000+ followers on Instagram and TikTok,
+                    designed to handle high volumes of dilemmas and let the community vote on verdicts.
+                    Messages are routed via an opt-in link, forming a human-in-the-loop system where community judgment drives moderation and aggregated verdicts.
+                    Feedback loops shape user behaviour, and the platform is designed to handle emergent social dynamics.
+                    I developed the frontend with React and the backend using Spring Boot with H2 and then PostgreSQL for data persistence.
+                    The system features role-based access control, vote-processing logic, and paginated APIs to ensure smooth, reliable interactions. I enjoy designing RESTful APIs, working with databases, and integrating human behaviour into scalable systems.</p>
 
                     <div class="cta">
                         <button class="btn btn-primary" id="open-modal">Contact Me</button>
@@ -87,17 +87,20 @@
                             <img src="assets/Img/JoinPage.png" alt="Screenshot of JoinPage">
 
                             <h3>TamNet App</h3>
-                            <p>A Community Platform where users anonymously submit stories(cases) and
-                                have them voted on, to arrive at a final verdict.</p>
+                            <p>A commuinity decision system that handles high-volume follower messages by converting unread and unanswered dilemma DMs into structured, community-driven verdicts.
+                            The system redistributes decision-making, reduces creator overload, and shapes user behavior through incentives and feedback loops.
+                            </p>
                             <div class="tags">
                                 <span class="tag">Java</span>
                                 <span class="tag">Spring Boot</span>
                                 <span class="tag">React</span>
+                                <span class="tag">H2->PostreSQL</span>
+                                <span class="tag">APIs</span>
                             </div>
                             <div class="proj-link">
                                 <a href="https://youtu.be/IFegBvVrc6k" target="_blank" rel="noopener">View Demo</a>
                                     
-                                <a href="assets/app_architecture.pdf" target="_blank" rel="noopener">Architecture Overview</a>
+                                <a href="assets/app_architecture.pdf" target="_blank" rel="noopener">System Architecture</a>
                                     
                             </div>
                         </article>
@@ -108,9 +111,9 @@
                             <img src="assets/Img/mainScreen.png" alt="Screenshot of Mood App">
 
                             <h3>Mood App</h3>
-                            <p>A JavaFX application that lets users select their current mood, view mood history, and
-                                analyze trends. Features a dynamic greeting, gradient backgrounds based on time of day,
-                                and exportable mood history.</p>
+                            <p>A JavaFX desktop application that allows users to log their current mood, view historical entries, and analyze mood trends over time.
+                            The app features dynamic greetings and gradient backgrounds that change based on the time of day to enhance user experience. Mood data is stored locally, 
+                            visualized through trend analysis, and can be exported for external use.</p>
                             <div class="tags">
                                 <span class="tag">Java</span>
                                 <span class="tag">JavaFX</span>
