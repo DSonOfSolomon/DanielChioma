@@ -57,3 +57,63 @@ document.querySelectorAll('.detail-card').forEach((card) => {
         card.removeAttribute('aria-disabled');
     }
 });
+
+document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+    const images = Array.from(carousel.querySelectorAll('.carousel-image'));
+    const dots = Array.from(carousel.querySelectorAll('[data-carousel-dot]'));
+    const prevBtn = carousel.querySelector('[data-carousel-prev]');
+    const nextBtn = carousel.querySelector('[data-carousel-next]');
+    let currentIndex = images.findIndex((image) => image.classList.contains('is-active'));
+    let startX = 0;
+
+    if (!images.length) {
+        return;
+    }
+
+    if (currentIndex < 0) {
+        currentIndex = 0;
+    }
+
+    const showSlide = (index) => {
+        currentIndex = (index + images.length) % images.length;
+        images.forEach((image, imageIndex) => {
+            image.classList.toggle('is-active', imageIndex === currentIndex);
+        });
+        dots.forEach((dot, dotIndex) => {
+            dot.classList.toggle('is-active', dotIndex === currentIndex);
+        });
+    };
+
+    prevBtn && prevBtn.addEventListener('click', () => {
+        showSlide(currentIndex - 1);
+    });
+
+    nextBtn && nextBtn.addEventListener('click', () => {
+        showSlide(currentIndex + 1);
+    });
+
+    dots.forEach((dot, dotIndex) => {
+        dot.addEventListener('click', () => {
+            showSlide(dotIndex);
+        });
+    });
+
+    carousel.addEventListener('touchstart', (event) => {
+        startX = event.touches[0].clientX;
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', (event) => {
+        const endX = event.changedTouches[0].clientX;
+        const deltaX = endX - startX;
+
+        if (Math.abs(deltaX) < 30) {
+            return;
+        }
+
+        if (deltaX < 0) {
+            showSlide(currentIndex + 1);
+        } else {
+            showSlide(currentIndex - 1);
+        }
+    });
+});

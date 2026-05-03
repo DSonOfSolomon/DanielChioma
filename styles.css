@@ -175,12 +175,90 @@
   box-shadow: 0 6px 18px var(--glass);
   border: 1px solid rgba(2, 6, 23, 0.03);
 }
-.proj img{
+
+.project-carousel{
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f7fafc;
+}
+
+.carousel-track{
+  position: relative;
+  aspect-ratio: 4 / 3;
+}
+
+.carousel-image{
+  position: absolute;
+  inset: 0;
   width: 100%;
+  height: 100%;
   max-height: 300px;
   object-fit: contain;
   border-radius: 8px;
   display: block;
+  opacity: 0;
+  transition: opacity 160ms ease;
+  pointer-events: none;
+}
+
+.carousel-image.is-active{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.carousel-control{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.72);
+  color: white;
+  font-size: 22px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.carousel-prev{
+  left: 10px;
+}
+
+.carousel-next{
+  right: 10px;
+}
+
+.carousel-dots{
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 1;
+}
+
+.carousel-dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+}
+
+.carousel-dot.is-active{
+  background: white;
+}
+
+.project-carousel:hover .carousel-control{
+  background: rgba(15, 23, 42, 0.86);
 }
 .proj h3{
   margin: 10px 0 6px 0;
@@ -295,6 +373,11 @@ footer{
     grid-template-columns:1fr}
   header{flex-direction:column;gap:12px;align-items:flex-start}
   .hero{flex-direction:column}
+  .carousel-control{
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+  }
 }
 
 
@@ -474,7 +557,6 @@ footer{
     max-width: none;
   }
 }
-
 
 
 
