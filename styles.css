@@ -1,13 +1,37 @@
 :root{
     --bg: #fbfbfd;
     --card: #ffffff;
+    --card-soft: #fbfdff;
+    --panel: #f7fafc;
     --muted:#6b7280;
     --accent:#de870e;
+    --accent-soft: rgba(222, 135, 14, 0.12);
     --text:#0f172a;
+    --border: rgba(15, 23, 42, 0.08);
+    --border-soft: rgba(2, 6, 23, 0.06);
     --glass: rgba(15,23,42,0.04);
+    --overlay: rgba(0,0,0,0.6);
+    --hero-tint: rgba(14,165,164,0.06);
     --radius:14px;
     --max:1100px;
     --ff-sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg: #0b1020;
+      --card: #121a2b;
+      --card-soft: #162033;
+      --panel: #0f1726;
+      --muted: #9aa7bd;
+      --text: #edf2fb;
+      --border: rgba(148, 163, 184, 0.18);
+      --border-soft: rgba(148, 163, 184, 0.16);
+      --glass: rgba(2, 6, 23, 0.34);
+      --overlay: rgba(2, 6, 23, 0.78);
+      --hero-tint: rgba(125, 211, 252, 0.08);
+      --accent-soft: rgba(222, 135, 14, 0.2);
+    }
   }
 
   *{
@@ -70,6 +94,17 @@
 
   }
 
+  .social-icons a{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    background: var(--card);
+    border: 1px solid var(--border-soft);
+  }
+
   .social-icons a img{
     width: 20px;
     height: 20px;
@@ -89,7 +124,7 @@
   }
 
 .hero{
-  background: linear-gradient(180deg, rgb(14,165, 164, 0.06), transparent);
+  background: linear-gradient(180deg, var(--hero-tint), transparent);
   padding: 32px;
   border-radius: var(--radius);
   display: flex;
@@ -147,7 +182,7 @@
 
 .btn-ghost{
   background: transparent;
-  border: 1px solid rgba(15,23,42,0.06);
+  border: 1px solid var(--border-soft);
   color: var(--text);
 }
 
@@ -171,16 +206,16 @@
 .proj{
   padding:14px;
   border-radius: 12px;
-  background: linear-gradient(180deg, #fff, #fbfdff);
+  background: linear-gradient(180deg, var(--card), var(--card-soft));
   box-shadow: 0 6px 18px var(--glass);
-  border: 1px solid rgba(2, 6, 23, 0.03);
+  border: 1px solid var(--border-soft);
 }
 
 .project-carousel{
   position: relative;
   border-radius: 10px;
   overflow: hidden;
-  background: #f7fafc;
+  background: var(--panel);
 }
 
 .carousel-track{
@@ -291,7 +326,7 @@
   font-size: 12px;
   padding: 6px 8px;
   border-radius: 8px;
-  background: rgba(2, 6, 23, 0.04);
+  background: var(--border-soft);
 }
 
 .skill{
@@ -328,7 +363,9 @@ form{
 input, textarea{
   padding: 10px;
   border-radius: 8px;
-  border: 1px solid rgba(2, 6, 23, 0.06);
+  border: 1px solid var(--border-soft);
+  background: var(--card);
+  color: var(--text);
   font-size: 14px;
 }
 
@@ -359,18 +396,19 @@ footer{
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0,0,0,0.6);
+  background: var(--overlay);
   justify-content: center;
   align-items: center;
   z-index: 100;
 }
 .modal-content {
-  background: #fff;
+  background: var(--card);
   padding: 24px;
   border-radius: 14px;
   width: 90%;
   max-width: 480px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  border: 1px solid var(--border);
 }
 
 .image-modal{
@@ -393,7 +431,7 @@ footer{
   max-height: calc(100vh - 120px);
   object-fit: contain;
   border-radius: 14px;
-  background: white;
+  background: var(--card);
   box-shadow: 0 18px 46px rgba(0, 0, 0, 0.34);
 }
 
@@ -440,7 +478,7 @@ footer{
   margin: 0;
   padding: 6px 12px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92);
+  background: color-mix(in srgb, var(--card) 92%, transparent);
   color: var(--text);
 }
 .modal-close {
@@ -582,9 +620,9 @@ footer{
 .experience-card{
   padding: 22px 20px;
   border-radius: 20px;
-  background: #0b0b0d;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+  background: linear-gradient(180deg, var(--card), var(--card-soft));
+  border: 1px solid var(--border);
+  box-shadow: 0 6px 18px var(--glass);
 }
 
 .experience-heading{
@@ -597,7 +635,7 @@ footer{
 
 .experience-heading h3{
   margin: 0;
-  color: #ffffff;
+  color: var(--text);
   font-size: 17px;
   font-weight: 800;
   letter-spacing: 0.01em;
@@ -605,14 +643,14 @@ footer{
 }
 
 .experience-role{
-  color: #6f8cff;
+  color: #5d7dff;
   font-size: 16px;
   font-weight: 600;
 }
 
 .experience-copy{
   margin: 0;
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--muted);
   font-size: 15px;
   line-height: 1.6;
   max-width: 58ch;
@@ -623,7 +661,7 @@ footer{
   flex-wrap: wrap;
   gap: 18px;
   margin-top: 16px;
-  color: rgba(255, 255, 255, 0.58);
+  color: var(--muted);
   font-size: 14px;
 }
 
@@ -643,8 +681,8 @@ footer{
   display: block;
   padding: 18px;
   border-radius: 14px;
-  background: linear-gradient(180deg, #fff, #f9fcff);
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: linear-gradient(180deg, var(--card), var(--card-soft));
+  border: 1px solid var(--border);
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
   text-decoration: none;
   color: var(--text);
@@ -672,7 +710,7 @@ footer{
   display: inline-block;
   padding: 6px 10px;
   border-radius: 999px;
-  background: rgba(222, 135, 14, 0.12);
+  background: var(--accent-soft);
   color: var(--accent);
   font-size: 12px;
   font-weight: 700;
@@ -689,7 +727,7 @@ footer{
 .placeholder-card:hover{
   transform: none;
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
-  border-color: rgba(15, 23, 42, 0.08);
+  border-color: var(--border);
 }
 
 #form-status{
@@ -703,6 +741,4 @@ footer{
     max-width: none;
   }
 }
-
-
 
