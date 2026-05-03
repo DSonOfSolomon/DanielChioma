@@ -79,10 +79,10 @@
                         <article class="proj">
                             <div class="project-carousel" data-carousel>
                                 <div class="carousel-track" data-carousel-track>
-                                    <img class="carousel-image is-active" src="assets/Img/join_page.png" alt="TamNet join page screenshot">
-                                    <img class="carousel-image" src="assets/Img/feed.png" alt="TamNet feed screenshot">
-                                    <img class="carousel-image" src="assets/submit_vote.png" alt="TamNet submit vote screenshot">
-                                    <img class="carousel-image" src="assets/verdict.png" alt="TamNet verdict screenshot">
+                                    <img class="carousel-image is-active" src="assets/Img/join_page.png" alt="TamNet join page screenshot" tabindex="0">
+                                    <img class="carousel-image" src="assets/Img/feed.png" alt="TamNet feed screenshot" tabindex="0">
+                                    <img class="carousel-image" src="assets/submit_vote.png" alt="TamNet submit vote screenshot" tabindex="0">
+                                    <img class="carousel-image" src="assets/verdict.png" alt="TamNet verdict screenshot" tabindex="0">
                                 </div>
                                 <button class="carousel-control carousel-prev" type="button" aria-label="Previous screenshot" data-carousel-prev>&lsaquo;</button>
                                 <button class="carousel-control carousel-next" type="button" aria-label="Next screenshot" data-carousel-next>&rsaquo;</button>
@@ -115,9 +115,9 @@
                         <article class="proj">
                             <div class="project-carousel" data-carousel>
                                 <div class="carousel-track" data-carousel-track>
-                                    <img class="carousel-image is-active" src="assets/Img/mainScreen.png" alt="Mood App main screen screenshot">
-                                    <img class="carousel-image" src="assets/Img/moodTrendsChart.png" alt="Mood App trends chart screenshot">
-                                    <img class="carousel-image" src="assets/Img/csvExport.png" alt="Mood App export screenshot">
+                                    <img class="carousel-image is-active" src="assets/Img/mainScreen.png" alt="Mood App main screen screenshot" tabindex="0">
+                                    <img class="carousel-image" src="assets/Img/moodTrendsChart.png" alt="Mood App trends chart screenshot" tabindex="0">
+                                    <img class="carousel-image" src="assets/Img/csvExport.png" alt="Mood App export screenshot" tabindex="0">
                                 </div>
                                 <button class="carousel-control carousel-prev" type="button" aria-label="Previous screenshot" data-carousel-prev>&lsaquo;</button>
                                 <button class="carousel-control carousel-next" type="button" aria-label="Next screenshot" data-carousel-next>&rsaquo;</button>
@@ -215,6 +215,14 @@
                 <button type="submit" class="btn btn-primary" style="margin-top:8px;">Send</button>
                 <p id="form-status" class="small" aria-live="polite"></p>
             </form>
+        </div>
+    </div>
+
+    <div class="modal image-modal" id="image-modal" aria-hidden="true">
+        <div class="image-modal-content">
+            <button class="image-modal-close" id="image-modal-close" type="button" aria-label="Close image preview">&times;</button>
+            <img id="image-modal-preview" src="" alt="">
+            <p id="image-modal-caption" class="small"></p>
         </div>
     </div>
 

@@ -29,6 +29,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 const modal = document.getElementById('contact-modal');
 const openModalBtn = document.getElementById('open-modal');
 const closeModalBtn = document.getElementById('modal-close');
+const imageModal = document.getElementById('image-modal');
+const imageModalCloseBtn = document.getElementById('image-modal-close');
+const imageModalPreview = document.getElementById('image-modal-preview');
+const imageModalCaption = document.getElementById('image-modal-caption');
 
 if (modal && openModalBtn && closeModalBtn) {
     const closeModal = () => {
@@ -38,12 +42,35 @@ if (modal && openModalBtn && closeModalBtn) {
     openModalBtn.addEventListener('click', ()=>{ modal.style.display = 'flex'; });
     closeModalBtn.addEventListener('click', closeModal);
     window.addEventListener('click', (e)=>{ if(e.target === modal) closeModal(); });
-    window.addEventListener('keydown', (e)=>{
-        if(e.key === 'Escape' && modal.style.display === 'flex'){
-            closeModal();
+}
+
+const closeImageModal = () => {
+    if (!imageModal) {
+        return;
+    }
+
+    imageModal.style.display = 'none';
+    imageModal.setAttribute('aria-hidden', 'true');
+    imageModalPreview && imageModalPreview.setAttribute('src', '');
+    imageModalPreview && imageModalPreview.setAttribute('alt', '');
+    imageModalCaption && (imageModalCaption.textContent = '');
+};
+
+if (imageModal && imageModalCloseBtn && imageModalPreview) {
+    imageModalCloseBtn.addEventListener('click', closeImageModal);
+    imageModal.addEventListener('click', (e) => {
+        if (e.target === imageModal) {
+            closeImageModal();
         }
     });
 }
+
+window.addEventListener('keydown', (e)=>{
+    if (e.key === 'Escape') {
+        modal && modal.style.display === 'flex' && (modal.style.display = 'none');
+        imageModal && imageModal.style.display === 'flex' && closeImageModal();
+    }
+});
 
 document.querySelectorAll('.detail-card').forEach((card) => {
     if (card.getAttribute('href') === '#') {
@@ -114,6 +141,28 @@ document.querySelectorAll('[data-carousel]').forEach((carousel) => {
             showSlide(currentIndex + 1);
         } else {
             showSlide(currentIndex - 1);
+        }
+    });
+});
+
+document.querySelectorAll('.carousel-image').forEach((image) => {
+    const openImageModal = () => {
+        if (!imageModal || !imageModalPreview || !image.classList.contains('is-active')) {
+            return;
+        }
+
+        imageModalPreview.src = image.currentSrc || image.src;
+        imageModalPreview.alt = image.alt;
+        imageModalCaption && (imageModalCaption.textContent = image.alt);
+        imageModal.style.display = 'flex';
+        imageModal.setAttribute('aria-hidden', 'false');
+    };
+
+    image.addEventListener('click', openImageModal);
+    image.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openImageModal();
         }
     });
 });
