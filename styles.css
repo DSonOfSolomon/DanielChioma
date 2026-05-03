@@ -412,6 +412,30 @@ footer{
   cursor: pointer;
 }
 
+.image-modal-nav{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.76);
+  color: white;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.image-modal-prev{
+  left: 14px;
+}
+
+.image-modal-next{
+  right: 14px;
+}
+
 #image-modal-caption{
   margin: 0;
   padding: 6px 12px;
@@ -435,6 +459,11 @@ footer{
     width: 30px;
     height: 30px;
     font-size: 20px;
+  }
+  .image-modal-nav{
+    width: 40px;
+    height: 40px;
+    font-size: 26px;
   }
 }
 
@@ -520,15 +549,12 @@ footer{
 }
 
 .proj-link a{
-  padding: 5px;
-  background-color: #f7f1e9;
-  border-radius: 17px;
+  padding: 10px 14px;
+  background: var(--accent);
+  border-radius: 10px;
   text-decoration: none;
-  color: rgb(0, 0, 0);
-  position: relative;
-  top: 12px;
-  margin-right: 5px;
-
+  color: white;
+  font-weight: 700;
 }
 
 .proj-link{
@@ -615,8 +641,6 @@ footer{
     max-width: none;
   }
 }
-
-
 
 
 

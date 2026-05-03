@@ -31,8 +31,13 @@ const openModalBtn = document.getElementById('open-modal');
 const closeModalBtn = document.getElementById('modal-close');
 const imageModal = document.getElementById('image-modal');
 const imageModalCloseBtn = document.getElementById('image-modal-close');
+const imageModalPrevBtn = document.getElementById('image-modal-prev');
+const imageModalNextBtn = document.getElementById('image-modal-next');
 const imageModalPreview = document.getElementById('image-modal-preview');
 const imageModalCaption = document.getElementById('image-modal-caption');
+let activeModalCarousel = null;
+let activeModalImages = [];
+let activeModalIndex = 0;
 
 if (modal && openModalBtn && closeModalBtn) {
     const closeModal = () => {
@@ -49,6 +54,9 @@ const closeImageModal = () => {
         return;
     }
 
+    activeModalCarousel = null;
+    activeModalImages = [];
+    activeModalIndex = 0;
     imageModal.style.display = 'none';
     imageModal.setAttribute('aria-hidden', 'true');
     imageModalPreview && imageModalPreview.setAttribute('src', '');
@@ -56,8 +64,41 @@ const closeImageModal = () => {
     imageModalCaption && (imageModalCaption.textContent = '');
 };
 
+const renderImageModal = () => {
+    const activeImage = activeModalImages[activeModalIndex];
+
+    if (!imageModal || !imageModalPreview || !activeImage) {
+        return;
+    }
+
+    imageModalPreview.src = activeImage.currentSrc || activeImage.src;
+    imageModalPreview.alt = activeImage.alt;
+    imageModalCaption && (imageModalCaption.textContent = activeImage.alt);
+};
+
+const stepImageModal = (direction) => {
+    if (!activeModalImages.length || !activeModalCarousel) {
+        return;
+    }
+
+    activeModalIndex = (activeModalIndex + direction + activeModalImages.length) % activeModalImages.length;
+    const carouselImages = Array.from(activeModalCarousel.querySelectorAll('.carousel-image'));
+    const carouselDots = Array.from(activeModalCarousel.querySelectorAll('[data-carousel-dot]'));
+
+    carouselImages.forEach((image, imageIndex) => {
+        image.classList.toggle('is-active', imageIndex === activeModalIndex);
+    });
+    carouselDots.forEach((dot, dotIndex) => {
+        dot.classList.toggle('is-active', dotIndex === activeModalIndex);
+    });
+
+    renderImageModal();
+};
+
 if (imageModal && imageModalCloseBtn && imageModalPreview) {
     imageModalCloseBtn.addEventListener('click', closeImageModal);
+    imageModalPrevBtn && imageModalPrevBtn.addEventListener('click', () => stepImageModal(-1));
+    imageModalNextBtn && imageModalNextBtn.addEventListener('click', () => stepImageModal(1));
     imageModal.addEventListener('click', (e) => {
         if (e.target === imageModal) {
             closeImageModal();
@@ -69,6 +110,12 @@ window.addEventListener('keydown', (e)=>{
     if (e.key === 'Escape') {
         modal && modal.style.display === 'flex' && (modal.style.display = 'none');
         imageModal && imageModal.style.display === 'flex' && closeImageModal();
+    }
+    if (imageModal && imageModal.style.display === 'flex' && e.key === 'ArrowLeft') {
+        stepImageModal(-1);
+    }
+    if (imageModal && imageModal.style.display === 'flex' && e.key === 'ArrowRight') {
+        stepImageModal(1);
     }
 });
 
@@ -152,9 +199,10 @@ document.querySelectorAll('[data-carousel]').forEach((carousel) => {
             return;
         }
 
-        imageModalPreview.src = activeImage.currentSrc || activeImage.src;
-        imageModalPreview.alt = activeImage.alt;
-        imageModalCaption && (imageModalCaption.textContent = activeImage.alt);
+        activeModalCarousel = carousel;
+        activeModalImages = images;
+        activeModalIndex = currentIndex;
+        renderImageModal();
         imageModal.style.display = 'flex';
         imageModal.setAttribute('aria-hidden', 'false');
     };
