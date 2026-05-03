@@ -7,7 +7,7 @@
     --glass: rgba(15,23,42,0.04);
     --radius:14px;
     --max:1100px;
-    --ff-sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    --ff-sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
   }
 
   *{
@@ -104,10 +104,14 @@
 }
 .hero h1{
   margin: 0;
-  font-size: 28px;
+  font-size: 36px;
+  line-height: 1.1;
+  max-width: 14ch;
 }
 .hero p{
-  margin-top: 8px; color: var(--muted);
+  margin-top: 12px;
+  color: var(--muted);
+  max-width: 68ch;
 }
 
 .cta{
@@ -141,6 +145,7 @@
   background: var(--card);
   padding: 20px;
   border-radius: 12px;
+  box-shadow: 0 6px 18px var(--glass);
 }
 .projects-grid{
   display: grid;
@@ -161,7 +166,7 @@
   display: block;
 }
 .proj h3{
-  margin: 10px 0 6x 0;
+  margin: 10px 0 6px 0;
   font-size: 16px;
 }
 .proj p{
@@ -178,7 +183,7 @@
 }
 .tag{
   font-size: 12px;
-  padding: 6 px 8px;
+  padding: 6px 8px;
   border-radius: 8px;
   background: rgba(2, 6, 23, 0.04);
 }
@@ -234,6 +239,13 @@ footer{
   text-align: center;
   color: var(--muted);
   font-size: 13px;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+  gap: 18px;
+  align-items: start;
 }
 
 .modal  {
@@ -311,8 +323,7 @@ footer{
 }
 
 .skills-inline p:last-child{
-  border-bottom: none;
-  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .skills-card {
@@ -362,6 +373,30 @@ footer{
 
 }
 
+.proj-link{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.proj-note{
+  font-size: 13px;
+  color: var(--muted);
+}
+
+#form-status{
+  min-height: 18px;
+  margin: 0;
+}
+
+@media (max-width:880px){
+  .hero h1{
+    font-size: 30px;
+    max-width: none;
+  }
+}
 
 
 

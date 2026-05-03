@@ -11,7 +11,7 @@ function handleSubmit(e){
     const mailto = `mailto:${email}?subject=${subject}&body=${body}`;
     status && (status.textContent = 'Opening your email client...');
     window.location.href = mailto;
-    setTimeout(()=>{ status && (status.textContent = 'If nothing opened, email me at' + email) },1500);   
+    setTimeout(()=>{ status && (status.textContent = 'If nothing opened, email me at ' + email) },1500);
 }
 
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
@@ -28,6 +28,15 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 const modal = document.getElementById('contact-modal');
 const openModalBtn = document.getElementById('open-modal');
 const closeModalBtn = document.getElementById('modal-close');
+const closeModal = () => {
+    modal.style.display = 'none';
+};
+
 openModalBtn.addEventListener('click', ()=>{ modal.style.display = 'flex'; });
-closeModalBtn.addEventListener('click', ()=>{ modal.style.display = 'none'; });
-window.addEventListener('click', (e)=>{ if(e.target === modal) modal.style.display = 'none'; });
+closeModalBtn.addEventListener('click', closeModal);
+window.addEventListener('click', (e)=>{ if(e.target === modal) closeModal(); });
+window.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape' && modal.style.display === 'flex'){
+        closeModal();
+    }
+});
