@@ -549,12 +549,8 @@ footer{
 }
 
 .proj-link a{
-  padding: 10px 14px;
-  background: var(--accent);
-  border-radius: 10px;
-  text-decoration: none;
-  color: white;
-  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 999px;
 }
 
 .proj-link{
@@ -641,7 +637,6 @@ footer{
     max-width: none;
   }
 }
-
 
 
 
