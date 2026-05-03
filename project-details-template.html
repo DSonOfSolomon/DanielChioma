@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details Template</title>
+    <meta name="description" content="Reusable template for project detail pages in Daniel Chioma's portfolio.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div class="brand">
+                <div class="logo">DC</div>
+                <div>
+                    <div style="font-weight: 800">Daniel Chioma</div>
+                    <div style="font-size:13px;color: var(--muted)">Project Details Template</div>
+                </div>
+            </div>
+            <nav aria-label="Project navigation">
+                <a href="index.html">Back to Portfolio</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero" aria-labelledby="template-title">
+                <div class="hero-left">
+                    <p class="eyebrow">Template</p>
+                    <h1 id="template-title">Project Name</h1>
+                    <p>Copy this file, rename it for a project, then replace the text and placeholder links below. Once you swap `href="#"` for a real destination, the card becomes clickable automatically.</p>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="template-resources-title">
+                <div class="section-head">
+                    <div>
+                        <h2 id="template-resources-title">Project Resources</h2>
+                        <p class="small">Suggested flow: copy this file, rename it, update the project title, then edit each card label, description, and `href` value.</p>
+                    </div>
+                </div>
+
+                <div class="detail-grid" role="list">
+                    <a class="detail-card" href="#">
+                        <span class="detail-type">Demo</span>
+                        <h3>Demo Title</h3>
+                        <p>Add a demo link here.</p>
+                    </a>
+
+                    <a class="detail-card" href="#">
+                        <span class="detail-type">PDF</span>
+                        <h3>Document Title</h3>
+                        <p>Add a PDF, architecture diagram, or report link here.</p>
+                    </a>
+
+                    <a class="detail-card" href="#">
+                        <span class="detail-type">Case Study</span>
+                        <h3>Case Study Title</h3>
+                        <p>Add a case study or technical write-up here.</p>
+                    </a>
+
+                    <a class="detail-card" href="#">
+                        <span class="detail-type">Repository</span>
+                        <h3>Repository Title</h3>
+                        <p>Add a GitHub repository, private access page, or code note here.</p>
+                    </a>
+                </div>
+            </section>
+
+            <footer>
+                <div>Made with intention - <span id="year"></span> Daniel Chioma</div>
+            </footer>
+        </main>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

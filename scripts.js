@@ -1,4 +1,5 @@
-document.getElementById('year').textContent= new Date().getFullYear();
+const yearEl = document.getElementById('year');
+yearEl && (yearEl.textContent = new Date().getFullYear());
 
 function handleSubmit(e){
     e.preventDefault();
@@ -28,15 +29,31 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 const modal = document.getElementById('contact-modal');
 const openModalBtn = document.getElementById('open-modal');
 const closeModalBtn = document.getElementById('modal-close');
-const closeModal = () => {
-    modal.style.display = 'none';
-};
 
-openModalBtn.addEventListener('click', ()=>{ modal.style.display = 'flex'; });
-closeModalBtn.addEventListener('click', closeModal);
-window.addEventListener('click', (e)=>{ if(e.target === modal) closeModal(); });
-window.addEventListener('keydown', (e)=>{
-    if(e.key === 'Escape' && modal.style.display === 'flex'){
-        closeModal();
+if (modal && openModalBtn && closeModalBtn) {
+    const closeModal = () => {
+        modal.style.display = 'none';
+    };
+
+    openModalBtn.addEventListener('click', ()=>{ modal.style.display = 'flex'; });
+    closeModalBtn.addEventListener('click', closeModal);
+    window.addEventListener('click', (e)=>{ if(e.target === modal) closeModal(); });
+    window.addEventListener('keydown', (e)=>{
+        if(e.key === 'Escape' && modal.style.display === 'flex'){
+            closeModal();
+        }
+    });
+}
+
+document.querySelectorAll('.detail-card').forEach((card) => {
+    if (card.getAttribute('href') === '#') {
+        card.classList.add('placeholder-card');
+        card.setAttribute('aria-disabled', 'true');
+        card.addEventListener('click', (e) => {
+            e.preventDefault();
+        });
+    } else {
+        card.classList.remove('placeholder-card');
+        card.removeAttribute('aria-disabled');
     }
 });
