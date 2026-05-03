@@ -86,6 +86,7 @@ document.querySelectorAll('.detail-card').forEach((card) => {
 });
 
 document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+    const track = carousel.querySelector('[data-carousel-track]');
     const images = Array.from(carousel.querySelectorAll('.carousel-image'));
     const dots = Array.from(carousel.querySelectorAll('[data-carousel-dot]'));
     const prevBtn = carousel.querySelector('[data-carousel-prev]');
@@ -143,26 +144,36 @@ document.querySelectorAll('[data-carousel]').forEach((carousel) => {
             showSlide(currentIndex - 1);
         }
     });
-});
 
-document.querySelectorAll('.carousel-image').forEach((image) => {
-    const openImageModal = () => {
-        if (!imageModal || !imageModalPreview || !image.classList.contains('is-active')) {
+    const openActiveImageModal = () => {
+        const activeImage = images[currentIndex];
+
+        if (!imageModal || !imageModalPreview || !activeImage) {
             return;
         }
 
-        imageModalPreview.src = image.currentSrc || image.src;
-        imageModalPreview.alt = image.alt;
-        imageModalCaption && (imageModalCaption.textContent = image.alt);
+        imageModalPreview.src = activeImage.currentSrc || activeImage.src;
+        imageModalPreview.alt = activeImage.alt;
+        imageModalCaption && (imageModalCaption.textContent = activeImage.alt);
         imageModal.style.display = 'flex';
         imageModal.setAttribute('aria-hidden', 'false');
     };
 
-    image.addEventListener('click', openImageModal);
-    image.addEventListener('keydown', (e) => {
+    track && track.addEventListener('click', (e) => {
+        if (e.target.closest('.carousel-control') || e.target.closest('.carousel-dot')) {
+            return;
+        }
+        openActiveImageModal();
+    });
+
+    track && track.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
-            openImageModal();
+            openActiveImageModal();
         }
+    });
+
+    images.forEach((image) => {
+        image.addEventListener('click', openActiveImageModal);
     });
 });

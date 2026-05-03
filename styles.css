@@ -186,6 +186,7 @@
 .carousel-track{
   position: relative;
   aspect-ratio: 4 / 3;
+  cursor: zoom-in;
 }
 
 .carousel-image{
@@ -200,7 +201,6 @@
   opacity: 0;
   transition: opacity 160ms ease;
   pointer-events: none;
-  cursor: zoom-in;
 }
 
 .carousel-image.is-active{
@@ -209,6 +209,11 @@
 }
 
 .carousel-image:focus-visible{
+  outline: 2px solid rgba(222, 135, 14, 0.9);
+  outline-offset: -2px;
+}
+
+.carousel-track:focus-visible{
   outline: 2px solid rgba(222, 135, 14, 0.9);
   outline-offset: -2px;
 }
@@ -610,7 +615,6 @@ footer{
     max-width: none;
   }
 }
-
 
 
 
