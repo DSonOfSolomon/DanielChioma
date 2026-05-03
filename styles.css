@@ -98,17 +98,23 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
-    border-radius: 999px;
-    background: var(--card);
-    border: 1px solid var(--border-soft);
+    width: 24px;
+    height: 24px;
+    text-decoration: none;
   }
 
   .social-icons a img{
-    width: 20px;
-    height: 20px;
+    display: block;
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    opacity: 1;
+  }
 
+  @media (prefers-color-scheme: dark){
+    .social-icons a img{
+      filter: brightness(0) invert(1);
+    }
   }
 
   nav a {
@@ -741,4 +747,3 @@ footer{
     max-width: none;
   }
 }
-
