@@ -12,6 +12,9 @@
     --glass: rgba(15,23,42,0.04);
     --overlay: rgba(0,0,0,0.6);
     --hero-tint: rgba(14,165,164,0.06);
+    --brand-surface-start: #dca55a;
+    --brand-surface-end: #8ec9e8;
+    --brand-surface-wash: rgba(255,255,255,0.2);
     --radius:14px;
     --max:1100px;
     --ff-sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
@@ -31,6 +34,9 @@
       --overlay: rgba(2, 6, 23, 0.78);
       --hero-tint: rgba(125, 211, 252, 0.08);
       --accent-soft: rgba(222, 135, 14, 0.2);
+      --brand-surface-start: #9b7749;
+      --brand-surface-end: #5f8faa;
+      --brand-surface-wash: rgba(255,255,255,0.08);
     }
   }
 
@@ -76,7 +82,7 @@
     width: 48px;
     height: 48px;
     border-radius: 12px;
-    background: linear-gradient(135deg, var(--accent), #7dd3fc);
+    background: linear-gradient(135deg, var(--brand-surface-start), var(--brand-surface-end));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -551,7 +557,7 @@ footer{
   font-weight: 700;
 }
 .skills-inline p {
-  background: rgba(255,255,255,0.15); 
+  background: var(--brand-surface-wash);
   padding: 8px 12px;
   border-radius: 8px;
   margin-bottom: 8px;
@@ -563,7 +569,7 @@ footer{
 }
 
 .skills-card {
-  background: linear-gradient(135deg, var(--accent), #7dd3fc 70%, rgba(222,135,14,0.1) 100%);
+  background: linear-gradient(135deg, var(--brand-surface-start), color-mix(in srgb, var(--brand-surface-end) 78%, var(--card) 22%) 72%, color-mix(in srgb, var(--brand-surface-end) 46%, var(--card) 54%) 100%);
   border-radius: 12px;
   padding: 20px;
   color: white; 
