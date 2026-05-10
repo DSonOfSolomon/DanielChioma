@@ -1,2 +1,5 @@
 .vscode/
 .DS_Store
+
+dev_server.py
+README-dev.txt

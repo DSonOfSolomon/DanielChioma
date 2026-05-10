@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
 :root{
     --bg: #fbfbfd;
     --card: #ffffff;
@@ -17,7 +19,7 @@
     --brand-surface-wash: rgba(255,255,255,0.2);
     --radius:14px;
     --max:1100px;
-    --ff-sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+    --ff-sans: "Poppins", "Segoe UI", sans-serif;
   }
 
   @media (prefers-color-scheme: dark){

@@ -225,3 +225,12 @@ document.querySelectorAll('[data-carousel]').forEach((carousel) => {
         image.addEventListener('click', openActiveImageModal);
     });
 });
+
+if (window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost') {
+    const liveReload = new EventSource('/__reload');
+    liveReload.onmessage = (event) => {
+        if (event.data === 'reload') {
+            window.location.reload();
+        }
+    };
+}
