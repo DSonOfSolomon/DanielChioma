@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FraudGuard Project Details</title>
+    <meta
+      name="description"
+      content="FraudGuard project details, supporting links, and recruiter-facing resources."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header>
+        <div class="brand">
+          <div class="logo">DC</div>
+          <div>
+            <div style="font-size: 13px; color: var(--muted)">
+              FraudGuard Project Details
+            </div>
+          </div>
+        </div>
+        <nav aria-label="Project navigation">
+          <a href="index.html">Back</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="fraudguard-details-title">
+          <div class="hero-left">
+            <p class="eyebrow">Featured Project</p>
+            <h1 id="fraudguard-details-title">FraudGuard</h1>
+            <p>
+                A cloud-native transaction screening platform designed as a distributed
+    microservice system across Kubernetes and Microsoft Azure. The application
+    screens transaction batches using independently deployed screening services,
+    routes requests through resilient proxy instances with failover and
+    circuit-breaker protection, and continuously monitors service health.
+    It also integrates Azure-hosted persistence, allowing transaction batches
+    to be saved and recalled using unique identifiers while keeping the core
+    screening services stateless.
+            </p>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="resources-title">
+          <div class="section-head">
+            <div>
+              <h2 id="resources-title">Project Resources</h2>
+              <p class="small">
+               
+              </p>
+            </div>
+          </div>
+
+            <a class="detail-card" href="http://frontend40490439.qpc.qubcloud.uk/">
+              <span class="detail-type">Live App</span>
+              <h3>Demo</h3>
+              <p>Click to view live app</p>
+            </a>
+
+            <a class="detail-card" href="">
+              <span class="detail-type">Repository</span>
+              <h3>Source Code</h3>
+              <p>Click to view source code</p>
+            </a>
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
